@@ -5,7 +5,7 @@ async function getBooks(category: string) {
   return res.json();
 }
 
-export default async function DetailPage({
+export default async function CategoryBookListPage({
   params,
 }: {
   params: { id: string };
@@ -29,16 +29,20 @@ export default async function DetailPage({
 
   return (
     <div className={styles.container}>
-      <h1>{params.id.toUpperCase()} BOOKS</h1>
+      <h1 className={styles.title}>
+        {params.id.replace(/-/g, " ").toUpperCase()} BOOKS
+      </h1>
       <div className={styles.grid}>
         {data.books.map((book: any) => (
           <div className={styles.card} key={book.title}>
-            <img src={book.image} alt={book.title} />
-            <p>{book.title}</p>
+            <img src={book.image} alt={book.title} className={styles.cover} />
+            <p className={styles.bookTitle}>{book.title}</p>
+            <p className={styles.author}>{book.author}</p>
             <a
               href={book.amazon_link}
               target="_blank"
               rel="noopener noreferrer"
+              className={styles.buy}
             >
               Buy now →
             </a>

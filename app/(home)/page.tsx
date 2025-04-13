@@ -1,29 +1,15 @@
+import { Suspense } from "react";
 import styles from "../../styles/home.module.css";
-import Link from "next/link";
 
-const categories = [
-  "business",
-  "education",
-  "espionage",
-  "celebrities",
-  "graphic-books",
-];
+import Categoryies from "../../components/book-categories";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className={styles.container}>
-      <h1>The New York Times Best Seller Explorer</h1>
-      <div className={styles.grid}>
-        {categories.map((category) => (
-          <Link
-            key={category}
-            href={`/list/${category}`}
-            className={styles.category}
-          >
-            {category.toUpperCase()} →
-          </Link>
-        ))}
-      </div>
+      <h1 className={styles.title}>The New York Times Best Seller Explorer</h1>
+      <Suspense fallback={<h1>Loading best seller...</h1>}>
+        <Categoryies />
+      </Suspense>
     </div>
   );
 }

@@ -1,0 +1,46 @@
+.container {
+  padding: 40px;
+}
+
+.title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.bookTitle {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+.author {
+  color: gray;
+  font-size: 14px;
+}
+
+.buy {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: underline;
+  color: black;
+}

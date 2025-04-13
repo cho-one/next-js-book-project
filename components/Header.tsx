@@ -1,11 +1,16 @@
+"use client";
 import Link from "next/link";
 import styles from "../styles/layout.module.css";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <Link href="/">Home</Link>
-      <Link href="/about">About</Link>
-    </header>
+    <div className={styles.header}>
+      <Link href="/" className={styles.link}>
+        Home
+      </Link>
+      <Link href="/about" className={styles.link}>
+        About
+      </Link>
+    </div>
   );
 }
