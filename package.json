@@ -1,0 +1,32 @@
+{
+  "name": "nextjs-book-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cho-one/next-js-book-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cho-one/next-js-book-project/issues"
+  },
+  "homepage": "https://github.com/cho-one/next-js-book-project#readme",
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.14.1",
+    "@types/react": "19.1.1",
+    "typescript": "5.8.3"
+  }
+}
