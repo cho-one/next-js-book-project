@@ -2,13 +2,7 @@ import { Suspense } from "react";
 import styles from "../../../styles/detail.module.css";
 import BookList from "../../../components/book-list";
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function DetailPage({ params }: PageProps) {
+export default async function DetailPage({ params }: any) {
   const resolvedParams = await params;
   const { id } = resolvedParams;
 
