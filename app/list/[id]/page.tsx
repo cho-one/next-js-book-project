@@ -2,14 +2,20 @@ import { Suspense } from "react";
 import styles from "../../../styles/detail.module.css";
 import BookList from "../../../components/book-list";
 
-export default function DetailPage({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function DetailPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
+
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        {params.id.replace(/-/g, " ").toUpperCase()}
-      </h1>
+    <div>
       <Suspense fallback={<p>Loading books...</p>}>
-        <BookList id={params.id} />
+        <BookList id={id} />
       </Suspense>
     </div>
   );
